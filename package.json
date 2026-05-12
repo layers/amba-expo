@@ -1,0 +1,111 @@
+{
+  "name": "@layers/amba-expo",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "description": "Amba Expo wrapper — AsyncStorage, push notifications, Apple/Google sign-in, and an Expo config plugin.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./plugin": {
+      "import": "./dist/plugin.js",
+      "types": "./dist/plugin.d.ts"
+    },
+    "./app.plugin.js": "./app.plugin.cjs",
+    "./app.plugin": "./app.plugin.cjs"
+  },
+  "files": [
+    "dist",
+    "app.plugin.cjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "expo": {
+    "plugin": "./app.plugin.cjs"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@layers/amba-client": "^0.1.0"
+  },
+  "peerDependencies": {
+    "expo": ">=52.0.0",
+    "expo-modules-core": ">=2.0.0",
+    "@expo/config-plugins": ">=9.0.0",
+    "expo-notifications": ">=0.29.0",
+    "expo-apple-authentication": ">=7.0.0",
+    "expo-auth-session": ">=6.0.0",
+    "expo-crypto": ">=14.0.0",
+    "expo-device": ">=7.0.0",
+    "expo-linking": ">=7.0.0",
+    "@react-native-async-storage/async-storage": ">=2.0.0",
+    "react": ">=18.0.0",
+    "react-native": ">=0.76.0"
+  },
+  "peerDependenciesMeta": {
+    "@expo/config-plugins": {
+      "optional": true
+    },
+    "expo-apple-authentication": {
+      "optional": true
+    },
+    "expo-auth-session": {
+      "optional": true
+    },
+    "expo-crypto": {
+      "optional": true
+    },
+    "expo-device": {
+      "optional": true
+    },
+    "expo-linking": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@expo/config-plugins": "^9.0.0",
+    "@types/react": "^18.3.12",
+    "expo": "^52.0.0",
+    "expo-apple-authentication": "^7.0.0",
+    "expo-auth-session": "^6.0.0",
+    "expo-crypto": "^14.0.0",
+    "expo-device": "^7.0.0",
+    "expo-linking": "^7.0.0",
+    "expo-modules-core": "^2.0.0",
+    "expo-notifications": "^0.29.0",
+    "@react-native-async-storage/async-storage": "^2.0.0",
+    "react": "^18.3.1",
+    "react-native": "^0.76.0",
+    "tsdown": "^0.12.5",
+    "typescript": "^5.8.3"
+  },
+  "keywords": [
+    "amba",
+    "expo",
+    "react-native",
+    "backend",
+    "baas"
+  ],
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/layers/amba-expo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/layers/amba-expo/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
