@@ -1,6 +1,6 @@
 {
   "name": "@layers/amba-expo",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "Apache-2.0",
   "engines": {
     "node": ">=22"
@@ -37,7 +37,8 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@layers/amba-client": "^0.1.0"
+    "@layers/amba-client": "^0.1.3",
+    "@layers/amba-shared": "^0.1.1"
   },
   "peerDependencies": {
     "expo": ">=52.0.0",

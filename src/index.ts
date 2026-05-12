@@ -1,4 +1,5 @@
 import { AmbaClient, type AmbaConfig } from '@layers/amba-client';
+import type { AuthResult } from '@layers/amba-shared';
 
 import { asyncStorageAdapter } from './storage.js';
 import {
@@ -241,7 +242,7 @@ export class ExpoAmbaClient {
   // ── One-liner social sign-in helpers ───────────────────────────────
 
   /** Prompt Apple Sign In and exchange the identity token for an Amba session. */
-  async signInWithApple() {
+  async signInWithApple(): Promise<AuthResult> {
     if (!(await isAppleAuthAvailable())) {
       throw new Error('Apple Sign In is not available on this device');
     }
@@ -250,7 +251,7 @@ export class ExpoAmbaClient {
   }
 
   /** Prompt Google Sign In and exchange the id_token for an Amba session. */
-  async signInWithGoogle() {
+  async signInWithGoogle(): Promise<AuthResult> {
     if (!this.config?.google) {
       throw new Error(
         'Google Sign In not configured. Pass `google` to Amba.init({ google: { clientId: "..." } })',
