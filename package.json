@@ -1,6 +1,6 @@
 {
   "name": "@layers/amba-expo",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "Apache-2.0",
   "engines": {
     "node": ">=22"
@@ -31,7 +31,7 @@
     "plugin": "./app.plugin.cjs"
   },
   "scripts": {
-    "build": "tsdown",
+    "build": "tsdown && tsc --emitDeclarationOnly",
     "dev": "tsdown --watch",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist"

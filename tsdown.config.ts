@@ -33,7 +33,7 @@ export default defineConfig([
   {
     entry: ['src/index.ts', 'src/plugin.ts'],
     format: 'esm',
-    dts: true,
+    dts: false,
     hash: false,
     clean: true,
     sourcemap: false,
